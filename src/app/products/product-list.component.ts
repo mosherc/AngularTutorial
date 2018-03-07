@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 
 @Component({
-    selector: 'product-list',
+    selector: 'app-product-list',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -60,7 +60,7 @@ export class ProductListComponent implements OnInit {
         'releaseDate': 'May 15, 2016',
         'description': '15-inch steel blade hand saw',
         'price': 11.55,
-        'starRating': 3.7,
+        'starRating': 3.5,
         'imageUrl': 'http://www.allthingsclipart.com/04/saw.04.jpg'
     },
     {
@@ -82,6 +82,10 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit() {
         console.log('here');
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 
     performFilter(filterBy: string): Product[] {
