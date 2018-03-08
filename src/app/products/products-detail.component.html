@@ -5,14 +5,42 @@
   <div class="panel-body">
     <div class="container">
       <div class="col-md-4">
-
+        <table class='table'>
+          <tr>
+            <th>Product Name:</th>
+            <td>{{product.productName}}</td>
+          </tr>
+          <tr>
+            <th>Description:</th>
+            <td>{{product.description}}</td>
+          </tr>
+          <tr>
+            <th>Product Code:</th>
+            <td>{{product.productCode}}</td>
+          </tr>
+          <tr>
+            <th>Price:</th>
+            <td>{{product.price | currency}}</td>
+          </tr>
+          <tr>
+            <th>Release Date:</th>
+            <td>{{product.releaseDate}}</td>
+          </tr>
+          <tr>
+            <th>Rating:</th>
+            <td>
+              <app-star [rating]="product.starRating"></app-star>
+            </td>
+          </tr>
+        </table>
       </div>
       <div class="col-md-8">
-        <img [src]="product.imageUrl" width="50%"/>
+        <img [src]="product.imageUrl" width="50%" />
       </div>
     </div>
   </div>
   <div class="panel-footer">
-    <button class="btn btn-default" (click)="onBack()"><i class="glyphicon glyphicon-chevron-left"></i> Back</button>
+    <button class="btn btn-default" (click)="onBack()">
+      <i class="glyphicon glyphicon-chevron-left"></i> Back</button>
   </div>
 </div>
